@@ -34,16 +34,29 @@ Our approach guarantees a stable, monotonic reduction in training complexity, ac
 
 ## 🚀 Running the Experiments
 
+**1. Baseline Critical Period Detection:**
 To start a standard training run with automated critical period detection:
 ```bash
-python main.py --dataset cifar10 --model resnet32 --epochs 200 --batch_size 128
+python main.py --dataset cifar10 --model resnet56 --baseline False
 ```
 
-To run the annealing experiments:
+**2. State-of-the-Art Data Pruning (IES + Critical Period):**
+To run the IES data pruning coupled with our Critical Period logic (Table 1 of the thesis):
 ```bash
-python Annealing.py --annealing_factor 0.99
+python cifar_main.py --dataset cifar10 --model resnet56 --cp 
 ```
 
+**3. Dynamic Random Pruning (Random + Critical Period):**
+To evaluate the effectiveness of timing on random pruning (defaults to 50% ratio, Table 4 of the thesis):
+```bash
+# Run with Critical Period timing enabled
+python cifar_main_random.py --dataset cifar10 --model resnet56 --cp 
+
+# Run standard dynamic random pruning (without Critical Period, for baseline comparison)
+python cifar_main_random.py --dataset cifar10 --model resnet56
+```
+
+**4. Additional Enhancements:**
 To measure environmental impact (Green AI metrics):
 ```bash
 python carbonEmission_FinancialCost.py
@@ -54,3 +67,4 @@ python carbonEmission_FinancialCost.py
 - **Generalization**: Limits the mean accuracy drop to just **0.09%** compared to baseline full-data training (outperforming standard IES at 0.26%).
 - **Efficiency**: Reduces training time by up to **59.67%**.
 - **Green AI**: Achieves a **59.47% decrease in CO₂ emissions** and a 60% reduction in financial costs.
+- **Random Pruning Robustness**: At a 50% pruning rate with our CP timing, the accuracy drop is merely 0.24 percentage points compared to the baseline.
