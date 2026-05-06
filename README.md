@@ -16,7 +16,6 @@ Our approach guarantees a stable, monotonic reduction in training complexity, ac
 
 - `models/`: Contains the neural network architectures (e.g., ResNet family).
 - `utils/`: Helper functions for data augmentation, calculating cosine distance, and applying linear regression over the 5-epoch window.
-- `weights/`: Stores the randomly initialized weights ($\theta^0$) required for calculating Layer Rotation, alongside training checkpoints.
 - `main.py`: The primary entry point implementing the core algorithm with dynamic conditional checking.
 - `Annealing.py`: Script to apply the annealing parameter ($\delta$), re-introducing the full dataset during final epochs.
 - `carbonEmission_FinancialCost.py`: Module to estimate and log training time, CO₂ emissions, and financial savings.
