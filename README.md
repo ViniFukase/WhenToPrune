@@ -1,9 +1,5 @@
 # Critical Learning Periods: Identifying Moments That Matter in Deep Neural Networks
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c)
-![License](https://img.shields.io/badge/license-MIT-green)
-
 This repository contains the official implementation of the Master's thesis **"Critical Learning Periods: Identifying Moments That Matter in Deep Neural Networks"** by Vinícius Yuiti Fukase (Universidade de São Paulo, 2026). 
 
 ## 📖 Abstract
