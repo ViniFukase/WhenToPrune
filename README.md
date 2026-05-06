@@ -17,6 +17,8 @@ Our approach guarantees a stable, monotonic reduction in training complexity, ac
 - `models/`: Contains the neural network architectures (e.g., ResNet family).
 - `utils/`: Helper functions for data augmentation, calculating cosine distance, and applying linear regression over the 5-epoch window.
 - `main.py`: The primary entry point implementing the core algorithm with dynamic conditional checking.
+- `cifar_main.py`: Script integrating the Instance-dependent Early Stopping (IES) data pruning method. It ensures IES reduction mechanisms are activated only *after* the Critical Period is identified, avoiding sample re-introduction instability.
+- `cifar_main_random.py`: Script for dynamic random pruning experiments. Allows customizable pruning ratios (e.g., 50%) and toggling the Critical Period (CP) logic to evaluate the impact of timing on simple stochastic baselines.
 - `Annealing.py`: Script to apply the annealing parameter ($\delta$), re-introducing the full dataset during final epochs.
 - `carbonEmission_FinancialCost.py`: Module to estimate and log training time, CO₂ emissions, and financial savings.
 
